@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    background-color: lightgray;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-table;
+    text-align: center;
+    margin-right: 100px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    right: 150px;
+}
+
+.fullWhith {
+    display: block;
+    width: 100%;
+}
+
+#tarjeta {
+    background-color: white;
+    width: 750px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px 5px black;
+}
+
+h4 {
+    text-align: center;
+    padding: 0px;
+}
+
+* {
+    font-family: cursive;
+}
+
+#Boton {
+    text-align: center;
+}
+
+#tarjeta div {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
