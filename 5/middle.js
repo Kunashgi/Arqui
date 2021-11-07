@@ -11,21 +11,13 @@ const { Server } = require('engine.io');
 ///////////////////////////////////////////////////////
 
 var server = http.createServer(function(req, res){
-    var objetourl=url.parse(req.url);
-    var camino = 'static'+objetourl.pathname;
-    if(camino=='static/')
-       camino='static/index4.html';
-    fs.exists(camino,function(existe){
-        if(existe){
-            fs.readFile(camino,function(error,data){
-                res.writeHead(200,{'Content-Type': 'text/html'});
-                res.end(data,"utf-8");
-                
-            });
-        };
-    });
-    
-}).listen(1000, '192.168.1.123');
+    fs.readFile('./pagina.html',function(error,data){
+        res.writeHead(200,{'Content-Type':'text/html'});
+        res.end(data,'utf-8');
+    })
+}).listen(1000,'192.168.1.123');
+
+
 
 
 

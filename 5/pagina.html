@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Sistema del sensor</title>
+        <script src = "/socket.io/socket.io.js"></script>
+
+    </head>
+    <script>
+        function recibir(){
+            var socket=io();
+            socket.on('lectura', function(data){
+                console.log(data);
+                document.getElementById("medida").value=data;
+            });
+
+        }
+    </script>
+    <body onload="recibir();">
+        <h1><center> Sistema de monitoreo</center></h1>
+        <h2>AUTOR: MATIAS GONZALEZ</h2>
+        <center><table border="3px"></center>
+            <h1>DATO:</h1><center><input name="caja1" id="caja"></center>
+    </body>
+</html>

@@ -6,7 +6,7 @@ def add(data):
 
 def main ():
     print("Server de procedimientos remotos")    
-    server = SimpleXMLRPCServer(('192.168.1.123',8000))
+    server = SimpleXMLRPCServer(('192.168.1.123',9000))
     server.register_function(add)
     server.serve_forever()
 

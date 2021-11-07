@@ -14,5 +14,5 @@ var net = require('net');
         return r;
 }
 generate();
-});
-server.listen(3000, '192.168.1.123');
+})
+server.listen(3000, '192.168.1.123')
