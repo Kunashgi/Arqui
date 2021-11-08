@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Sistema del sensor</title>
+        <script src = "/socket.io/socket.io.js"></script>
+
+    </head>
+    <script>
+        function recibir(){
+            var socket=io();
+            socket.on('lectura', function(data){
+                console.log(data);
+                document.getElementById("caja").value=data;
+             if (data<50){
+                 var normal='NORMAL'
+                 document.getElementById("alerta").value=normal;
+                 document.getElementById("semaforo").src="Alto.png";
+             }
+             if (data<80){
+                 var peligro='PELIGRO'
+                 document.getElementById("alerta").value=peligro;
+                 document.getElementById("semaforo").src="peligro.png";
+             }
+             if (data<30){
+                 var bajo='BAJO'
+                 document.getElementById("alerta").value=bajo;
+                 document.getElementById("semaforo").src="bajo.png";
+             }
+             if (data<10){
+                 var critico='CRITICO'
+                 document.getElementById("alerta").value=critico;
+                 document.getElementById("semaforo").src="critico.png";
+             }
+            });
+
+        }
+    </script>
+    <body onload="recibir();">
+        <body bgcolor="#D9D9D9"></body>
+        <h1><center> MONITOREO</center></h1>
+        <h4><center> Autores: Matias Gonzalez  Eduardo Barrera  Mitzy Arancibia</center></h4>
+        <p>
+            <h3> Medicion de variables</h3>
+            NODO 1 (Sonido:)<input id="alerta" size="10">
+            Sistema de Alerta Condicion : <input id="caja" size="10">
+            <center><img src="alto.png" input type="image" id="semaforo" style='width:300px;height:139px;'></center>
+        
+        </p>
+    </body>
+</html>
