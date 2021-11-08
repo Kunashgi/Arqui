@@ -10,25 +10,25 @@
             socket.on('lectura', function(data){
                 console.log(data);
                 document.getElementById("caja").value=data;
-             if (data<50){
-                 var normal='NORMAL'
-                 document.getElementById("alerta").value=normal;
-                 document.getElementById("semaforo").src="Alto.png";
-             }
-             if (data<80){
-                 var peligro='PELIGRO'
-                 document.getElementById("alerta").value=peligro;
-                 document.getElementById("semaforo").src="peligro.png";
-             }
-             if (data<30){
+             if (data>30){
                  var bajo='BAJO'
                  document.getElementById("alerta").value=bajo;
                  document.getElementById("semaforo").src="bajo.png";
              }
-             if (data<10){
-                 var critico='CRITICO'
-                 document.getElementById("alerta").value=critico;
-                 document.getElementById("semaforo").src="critico.png";
+             if (data>50){
+                 var medio='MEDIO'
+                 document.getElementById("alerta").value=medio;
+                 document.getElementById("semaforo").src="medio.png";
+             }
+             if (data>80){
+                 var alto='ALTO'
+                 document.getElementById("alerta").value=alto;
+                 document.getElementById("semaforo").src="alto.png";
+             }
+             if (data>90){
+                 var optimo='OPTIMO'
+                 document.getElementById("alerta").value=optimo;
+                 document.getElementById("semaforo").src="optimo.png";
              }
             });
 
